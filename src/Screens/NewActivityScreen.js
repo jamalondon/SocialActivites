@@ -12,12 +12,9 @@ import {} from '@rneui/themed';
 import * as Location from 'expo-location';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import DateTimePicker from '@react-native-community/datetimepicker';
-import styles from '../styles';
+import { styles, screen } from '../styles';
 import HorizontalLineSeperator from '../Components/HorizontalLineSeperator';
 import { Context as ActivityContext } from '../Data Management/ActivityContext';
-
-//get the dimensions of the screen
-const screen = Dimensions.get('screen');
 
 const NewActivityScreen = ({ navigation, route }) => {
 	const { state, createActivity } = useContext(ActivityContext);

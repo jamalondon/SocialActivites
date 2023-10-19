@@ -3,7 +3,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
 import { View } from 'react-native';
 
-import styles from '../styles';
+import { styles, screen } from '../styles';
 import ChatLog from '../Screens/ChatLog';
 import HomeScreen from '../Screens/HomeScreen';
 import NewActivityScreen from '../Screens/NewActivityScreen';

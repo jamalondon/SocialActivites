@@ -6,6 +6,8 @@ const activityReducer = (state, action) => {
 	switch (action.type) {
 		case 'addActivity':
 			return [...state, action.payload];
+		case 'fetchActivities':
+			return action.payload;
 		default:
 			return state;
 	}
@@ -31,7 +33,6 @@ const createActivity = (dispatch) => {
 			};
 
 			const response = await ServerAPI.post('/activities', activity);
-			//console.log(response.data.data.activity);
 			dispatch({ type: 'addActivity', payload: response.data.data.activity });
 			navigation.navigate('Home');
 		} catch (err) {
@@ -42,8 +43,13 @@ const createActivity = (dispatch) => {
 
 const deleteActivity = (dispatch) => {};
 
+const fetchActivities = (dispatch) => async () => {
+	const response = await ServerAPI.get('/activities');
+	dispatch({ type: 'fetchActivities', payload: response.data.data });
+};
+
 export const { Provider, Context } = createDataContext(
 	activityReducer,
-	{ createActivity, deleteActivity },
+	{ createActivity, deleteActivity, fetchActivities },
 	[]
 );

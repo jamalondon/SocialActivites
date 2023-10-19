@@ -33,7 +33,6 @@ const styles = StyleSheet.create({
 		backgroundColor: 'rgb(255, 138, 76)',
 		flex: 1,
 		alignItems: 'stretch',
-		//justifyContent: 'center',
 	},
 	tabBar: {
 		shadowColor: 'black',
@@ -84,6 +83,16 @@ const styles = StyleSheet.create({
 		alignSelf: 'center',
 		backgroundColor: 'black',
 	},
+	activityView: {
+		//flex: 1,
+		backgroundColor: 'white',
+		alignSelf: 'center',
+		borderRadius: 10,
+		margin: 1,
+		width: screen.width < 400 ? 350 : 400,
+		padding: 10,
+		marginTop: 10,
+	},
 });
 
-export default styles;
+export { styles, screen };
