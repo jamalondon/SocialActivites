@@ -54,13 +54,11 @@ const localStyles = StyleSheet.create({
 	},
 	leftTextContainer: {
 		//flex: 1, // This component won't take up extra space
-		backgroundColor: 'white',
 		//marginLeft: 5,
 	},
 	centeredTextContainer: {
 		flex: 1, // This component will take up the remaining space and center its content
 		alignItems: 'center', // To horizontally center the content
-		backgroundColor: 'white',
 	},
 });
 
