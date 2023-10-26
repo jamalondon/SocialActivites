@@ -41,7 +41,7 @@ export function HomeNavigator() {
 				headerShown: false,
 			}}
 		>
-			<Tabs.Screen
+			{/* <Tabs.Screen
 				name="Chat"
 				component={ChatLog}
 				options={{
@@ -51,7 +51,7 @@ export function HomeNavigator() {
 						</View>
 					),
 				}}
-			/>
+			/> */}
 			<Tabs.Screen
 				name="Main"
 				component={MainStackScreen}

@@ -14,6 +14,7 @@ import ActivityList from '../Components/ActivityList';
 
 const HomeScreen = ({ navigation, route }) => {
 	const { state, fetchActivities } = useContext(ActivityContext);
+	const [render, setRender] = useState('false');
 
 	useEffect(() => {
 		const unsubscribe = navigation.addListener('focus', () => {
@@ -22,7 +23,11 @@ const HomeScreen = ({ navigation, route }) => {
 		});
 
 		return unsubscribe;
-	}, [navigation]);
+	}, [state]);
+
+	const updateScreen = () => {
+		setRender(!render);
+	};
 
 	return state ? (
 		<SafeAreaView style={styles.SafeArea}>
@@ -39,7 +44,7 @@ const HomeScreen = ({ navigation, route }) => {
 					<Text style={{ fontSize: 25 }}>Activities</Text>
 				</View>
 			</View>
-			<ActivityList props={state} />
+			<ActivityList data={state} callback={updateScreen} />
 		</SafeAreaView>
 	) : (
 		<View></View>

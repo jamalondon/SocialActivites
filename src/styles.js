@@ -45,12 +45,12 @@ const styles = StyleSheet.create({
 		elevation: 5,
 		position: 'absolute',
 		bottom: 25,
-		left: screen.width / 2 - 150,
+		left: screen.width / 2 - 100,
 		elevation: 0,
 		backgroundColor: 'white',
 		borderRadius: 15,
 		height: 70,
-		width: 300,
+		width: 200,
 	},
 	errorMessage: {
 		fontSize: 16,
@@ -92,6 +92,9 @@ const styles = StyleSheet.create({
 		width: screen.width < 400 ? 350 : 400,
 		padding: 10,
 		marginTop: 10,
+	},
+	activityHeader: {
+		alignSelf: 'center',
 	},
 });
 

@@ -6,8 +6,10 @@ import styles from '../styles';
 const ActivityList = (props) => {
 	return (
 		<FlatList
-			data={props.props}
-			renderItem={({ item }) => <Activity item={item} />}
+			data={props.data}
+			renderItem={({ item }) => (
+				<Activity item={item} callback={props.callback} />
+			)}
 			keyExtractor={(item) => item._id}
 		/>
 	);

@@ -8,6 +8,12 @@ const activityReducer = (state, action) => {
 			return [...state, action.payload];
 		case 'fetchActivities':
 			return action.payload;
+		case 'deleteActivity':
+			const deleteID = state.findIndex(
+				(obj) => obj._id === action.payload.activityID
+			);
+			state.splice(deleteID, 1);
+			return state;
 		default:
 			return state;
 	}
@@ -41,7 +47,17 @@ const createActivity = (dispatch) => {
 	};
 };
 
-const deleteActivity = (dispatch) => {};
+const deleteActivity = (dispatch) => {
+	return async ({ activityID, callback }) => {
+		try {
+			await ServerAPI.delete(`/activities/${activityID}`);
+			dispatch({ type: 'deleteActivity', payload: { activityID } });
+			callback();
+		} catch (err) {
+			console.log(err);
+		}
+	};
+};
 
 const fetchActivities = (dispatch) => async () => {
 	const response = await ServerAPI.get('/activities');

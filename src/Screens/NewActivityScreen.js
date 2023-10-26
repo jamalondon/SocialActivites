@@ -232,6 +232,7 @@ const NewActivityScreen = ({ navigation, route }) => {
 								startDate,
 								endDate,
 								address,
+								navigation,
 							});
 						} else {
 							//helper variable to combine create full address
